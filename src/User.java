@@ -1,37 +1,9 @@
-public class User {
-    private int ssn,credit_card_no,age;
-    private String name,gender;
+public abstract class User {
+    private String name,password;
 
-    public User(int ssn, int credit_card_no, int age, String name, String gender) {
-        this.ssn = ssn;
-        this.credit_card_no = credit_card_no;
-        this.age = age;
+    public User(String name, String password) {
         this.name = name;
-        this.gender = gender;
-    }
-
-    public int getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(int ssn) {
-        this.ssn = ssn;
-    }
-
-    public int getCredit_card_no() {
-        return credit_card_no;
-    }
-
-    public void setCredit_card_no(int credit_card_no) {
-        this.credit_card_no = credit_card_no;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+        this.password = password;
     }
 
     public String getName() {
@@ -42,11 +14,11 @@ public class User {
         this.name = name;
     }
 
-    public String getGender() {
-        return gender;
+    public String getPassword() {
+        return password;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
