@@ -19,6 +19,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        StoreSystem system=StoreSystem.getInstance();
 
 
     }

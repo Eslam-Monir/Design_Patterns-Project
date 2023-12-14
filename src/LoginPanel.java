@@ -17,6 +17,8 @@ public class LoginPanel {
 
                 ResultSet res = connectionStatement.executeQuery("select * from customer where email=" + email + " and password =" + password);
                 res.next();
+
+                // TODO: add warning if the user is not found in gui
                 StoreSystem.loggedUser=new Customer(res.getString("name"),res.getString("password"),res.getString("email")
                         ,0,res.getInt("credit_card_no")
                         ,res.getInt("age"),res.getString("gemder"));
