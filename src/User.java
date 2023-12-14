@@ -1,5 +1,9 @@
 public abstract class User {
     private String name,password;
+    boolean isAdmin=false;
+    public User() {
+
+    }
 
     public User(String name, String password) {
         this.name = name;

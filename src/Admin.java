@@ -6,6 +6,12 @@ public class Admin extends User{
   public Admin(String name, String password) {
     super(name, password);
   }
+
+
+  public Admin() {
+    super();
+  }
+
   public  void  add_Category(String category,Connection conn){
   try {
     String sql = "INSERT INTO category (name) values('"+category +"')";
@@ -41,5 +47,6 @@ public class Admin extends User{
       System.out.println(e.getMessage());
     }
   }
+
 
 }

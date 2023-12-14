@@ -1,7 +1,7 @@
 
 import java.sql.*;
 public class  StoreSystem {
-    public User loggedUser;
+    public static User loggedUser;
 
 
     private StoreSystem() {
