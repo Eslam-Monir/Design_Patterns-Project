@@ -6,20 +6,15 @@ public class Main {
 
 
     public static void main(String[] args)  {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e) {
-
-            e.printStackTrace();
-        }
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/StoreDB", "root", "");
 
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery("Select * from StoreDB.users");
-            System.out.println(result);
+            result.next();
+            String username=result.toString();
+            System.out.println(username);
 
         } catch (Exception e) {
             e.printStackTrace();
