@@ -1,5 +1,6 @@
-
+import java.util.ArrayList;
 import java.sql.*;
+
 public class  StoreSystem {
     public static User loggedUser;
 
@@ -46,6 +47,39 @@ public class  StoreSystem {
         }
         catch (Exception e){
             System.out.println(e.getMessage());
+        }
+    }
+
+    public void getAllCategories(Statement connectionStatement){
+
+        try {
+            ResultSet res = connectionStatement.executeQuery("select * from category");
+            ArrayList<Category> allCategories=new ArrayList<Category>();
+            while(res.next()){
+                Category category=new Category(res.getInt("id"),res.getString("name"));
+                allCategories.add(category);
+            }
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException(e);
+
+        }
+    }
+    public void getAllProducts(Statement connectionStatement){
+
+        try {
+            ResultSet res = connectionStatement.executeQuery("select * from items");
+            ArrayList<Product> allProducts=new ArrayList<Product>();
+            while(res.next()){
+                Product product=new Product(res.getInt("id"),res.getInt("quantity"),res.getInt("price"),res.getInt("discount"),res.getString("name"),res.getString("image"));
+                allProducts.add(product);
+            }
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException(e);
+
         }
     }
 
