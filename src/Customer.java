@@ -1,12 +1,14 @@
 public class Customer extends User {
     private int ssn,credit_card_no,age;
-    private String gender;
+    private String gender,email;
 
-    public Customer(String name, String password, int ssn, int credit_card_no, int age) {
+    public Customer(String name,String email, String password, int ssn, int credit_card_no, int age ,String gender) {
         super(name, password);
+        this.email=email;
         this.ssn = ssn;
         this.credit_card_no = credit_card_no;
         this.age = age;
+        this.gender=gender;
     }
 
     public int getSsn() {
@@ -19,6 +21,9 @@ public class Customer extends User {
 
     public int getCredit_card_no() {
         return credit_card_no;
+    }
+
+    public Customer() {
     }
 
     public void setCredit_card_no(int credit_card_no) {
