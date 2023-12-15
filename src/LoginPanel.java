@@ -33,7 +33,7 @@ public class LoginPanel {
 
     public void Register(Statement connectionStatement,String name ,String password,String email,int ssn,int credit_card_no,int age, String gender){
         try {
-            connectionStatement.executeUpdate("INSERT INTO `StoreDB`.`Customer` (`name`, `password`, `email`, `ssn`, `credit_card_no\n`, `age`, `type`) VALUES ('"+ name+"' , '" + password + "', '" + email + "', '" + ssn + "', '" + credit_card_no + "', '" + age + "', '" + gender + "')");
+            connectionStatement.executeUpdate("INSERT INTO `StoreDB`.`Customer` (`name`, `password`, `email`, `ssn`, `credit_card_no`, `age`, `type`) VALUES ('"+ name+"' , '" + password + "', '" + email + "', '" + ssn + "', '" + credit_card_no + "', '" + age + "', '" + gender + "')");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -83,4 +83,17 @@ public class  StoreSystem {
         }
     }
 
+    public void Addfeedback(Statement connectionStatement,int user_id,int prod_id,String comment){
+        try {
+            String sql = "INSERT INTO `StoreDB`.`feedback` (`u_id`, `p_id`, `comment`) VALUES ('"+ user_id+"' , '" + prod_id + "', '" + comment +  "')";
+
+            connectionStatement.executeUpdate(sql);
+
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 }
