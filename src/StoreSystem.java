@@ -64,6 +64,7 @@ public class  StoreSystem {
 
             throw new RuntimeException(e);
 
+
         }
     }
     public void getAllProducts(Statement connectionStatement){
