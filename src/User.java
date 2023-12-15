@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
 public abstract class User {
     private String name,password;
     boolean isAdmin=false;
@@ -26,6 +30,16 @@ public abstract class User {
         this.password = password;
     }
 
+    public  void updatePersonalInfo( String new_name, Statement connectionStatement){
 
+        try {
+            String sql = "UPDATE customer SET name='" + new_name + "'WHERE name='" + this.name + "'";
+            this.setName(new_name);
+            connectionStatement.executeUpdate(sql);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 
 }
